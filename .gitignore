@@ -4,5 +4,6 @@
 */cache/*
 */cache/!index.html
 user_guide/
+assets/css/hulk.css
 assets/css/less/
 Hulk.komodoproject
