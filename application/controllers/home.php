@@ -20,7 +20,7 @@ class Home extends CI_Controller {
 		//print_r($data);
 
 		$data['user_feed'] = $this->instagram_api->getUser($this->session->userdata('instagram-user-id'));
-		print_r($data['user_feed']);
+		//print_r($data['user_feed']);
 
 		$data['main_view'] = 'welcome_message';
 		//var_dump($data);

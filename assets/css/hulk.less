@@ -10,8 +10,34 @@
 @import "less/tables.less";
 @import "less/buttons.less";
 
+
+// Grid system and page structure
+@import "less/scaffolding.less";
+@import "less/grid.less";
+@import "less/layouts.less";
+
+// Components: Nav
+@import "less/navs.less";
+@import "less/navbar.less";
+@import "less/breadcrumbs.less";
+@import "less/pagination.less";
+@import "less/pager.less";
+
 body{
-	background: url(../images/bg-body.png) repeat left top;
+	margin: 0;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+#main{
+	margin:55px auto 0;
+}
+
+#connect-block{
+
 }
 
 a.btn-connect {
@@ -29,7 +55,7 @@ a.btn-connect {
     }
 }
 
-img, ul, li {
+ul, ol{
 	margin:0;
 	padding:0;
 	border:none;
@@ -41,12 +67,21 @@ img, ul, li {
 	margin-right:10px;
 }
 
-footer {
-	display:block;
-	clear:left;
-}
 
-#map {
-	width:400px;
-	height:400px;
-}
+/* Responsive */
+@import "less/responsive-utilities.less";
+// MEDIA QUERIES
+// ------------------
+// Phones to portrait tablets and narrow desktops
+@import "less/responsive-767px-max.less";
+
+// Tablets to regular desktops
+@import "less/responsive-768px-979px.less";
+
+// Large desktops
+@import "less/responsive-1200px-min.less";
+
+// RESPONSIVE NAVBAR
+// ------------------
+// From 979px and below, show a button to toggle navbar contents
+@import "less/responsive-navbar.less";
