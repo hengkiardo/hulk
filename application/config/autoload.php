@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'ezsql_codeigniter', 'session');
+$autoload['libraries'] = array('database','instagram_api','ezsql_codeigniter','session');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'ezsql_codeigniter', 'session');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('ez_sql_core');
+$autoload['helper'] = array('url','ez_sql_core', 'html', 'form');
 
 
 /*
