@@ -1,4 +1,27 @@
 @import "less/reset.less";
+
+@font-face {
+    font-family: 'KaushanScriptRegular';
+    src: url('../font/kaushanscript-regular-webfont.eot');
+    src: url('../font/kaushanscript-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/kaushanscript-regular-webfont.woff') format('woff'),
+         url('../font/kaushanscript-regular-webfont.ttf') format('truetype'),
+         url('../font/kaushanscript-regular-webfont.svg#KaushanScriptRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BubblegumSansRegular';
+    src: url('../font/bubblegumsans-regular-webfont.eot');
+    src: url('../font/bubblegumsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/bubblegumsans-regular-webfont.woff') format('woff'),
+         url('../font/bubblegumsans-regular-webfont.ttf') format('truetype'),
+         url('../font/bubblegumsans-regular-webfont.svg#BubblegumSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // Core variables and mixins
 @import "less/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "less/mixins.less";
@@ -9,7 +32,6 @@
 @import "less/forms.less";
 @import "less/tables.less";
 @import "less/buttons.less";
-
 
 // Grid system and page structure
 @import "less/scaffolding.less";
@@ -37,23 +59,33 @@ body{
 }
 
 #connect-block{
+	margin:10px 0 0 0;
 
+	span{
+		display: block;
+		float: left;
+		margin: 0 10px 0 0;
+	}
+
+	a.btn-connect {
+	    background: url(../images/instagram_connect.png) no-repeat transparent;
+	    cursor: pointer;
+	    display: block;
+	    float: right;
+	    height: 29px;
+	    margin: 0;
+	    overflow: hidden;
+	    text-indent: -9999px;
+	    width: 200px;
+	    margin-top: -5px;
+
+	    &:hover{
+	    	 background-position: 0 -29px;
+	    }
+	}
 }
 
-a.btn-connect {
-    background: url(../images/instagram_connect.png) no-repeat transparent;
-    cursor: pointer;
-    display: inline-block;
-    height: 29px;
-    margin: 0;
-    overflow: hidden;
-    text-indent: -9999px;
-    width: 200px;
 
-    &:hover{
-    	 background-position: 0 -29px;
-    }
-}
 
 ul, ol{
 	margin:0;
@@ -70,7 +102,6 @@ ul, ol{
 
 /* Responsive */
 @import "less/responsive-utilities.less";
-// MEDIA QUERIES
 // ------------------
 // Phones to portrait tablets and narrow desktops
 @import "less/responsive-767px-max.less";
