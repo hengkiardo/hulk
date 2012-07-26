@@ -169,6 +169,7 @@ class Instagram_api {
     function getUser($user_id) {
     
      $user_request_url = sprintf($this->api_urls['user'], $user_id, $this->access_token);
+     var_dump($user_request_url);
     
      return $this->__apiCall($user_request_url);
     

@@ -1,0 +1,91 @@
+#formCreateWidget{
+	width: auto;
+	display: block;
+
+	.clearfix{
+		margin-bottom: 7px;
+	}
+
+	input{
+		outline: none !important;
+	}
+
+	label{
+		font-size: 13px;
+		line-height: 18px;
+		float: left;
+		width: 115px;
+		padding:6px 15px 0 0;
+		text-align: right;
+		color: #404040;
+	}
+	.tip{
+		color: #bbb;
+		margin-left: 5px;
+		font-size: 11px;
+		display: inline-block;
+		margin-top: 3px;
+	}
+
+	.prepend{
+		padding: 0;
+	}
+
+	.append{
+		.form-add-on{
+			margin-right: 0;
+			margin-left: -2px;
+			.border-radius(0 3px 3px 0);
+		}
+	}
+
+	input.have-add-on-left{
+		border-left:none;
+	}
+
+	div.buttons{
+		padding: 5px 0 0 130px;
+	}
+
+	input.small{
+		width: 50px !important;
+	}
+	select.small{
+		width: 85px !important;
+
+		&.layout{
+			width: 50px !important;
+		}
+	}
+	input.medium,
+	select.medium{
+		width: 140px !important;
+	}
+	.inline-block{
+		display: inline-block;
+	}
+	.padding010{
+		padding: 0 10px;
+	}
+
+}
+
+.form-add-on{
+	position: relative;
+	background: #F5F5F5;
+	border: 1px solid #CCC;
+	z-index: 2;
+	float: left;
+	display: block;
+	width: auto;
+	min-width: 16px;
+	height: 18px;
+	padding: 4px 4px 4px 5px;
+	margin-right: -2px;
+	font-weight: normal;
+	line-height: 18px;
+	color: #BFBFBF;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+	.border-radius(3px 0 0 3px);
+}

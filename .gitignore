@@ -3,6 +3,8 @@
 */logs/!index.html
 */cache/*
 */cache/!index.html
+*/.DS_Store
 user_guide/
 assets/css/hulk.css
+assets/helper/*
 Hulk.komodoproject
