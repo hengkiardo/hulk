@@ -41,7 +41,7 @@
                   'no'   => 'No'
                 );
 
-                echo form_dropdown('is_slideshow', $options, 'no', 'class="small"');    
+                echo form_dropdown('is_slideshow', $options, 'no', 'class="small" id="is_slideshow"');    
             ?>
             <span class="tip"></span>
         </div>
@@ -62,13 +62,13 @@
         </div>
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix" id="blockLayout">
         <?=form_label('Layout', 'layoutX')?>
         <div class="prepend">
             <?php
-                $options = array(1,2,3,4,5,6,7,8,9,10);
+                $options = array("1"=>1,2,3,4,5,6,7,8,9,10);
 
-                echo form_dropdown('layoutX', $options, '1', 'class="small layout" id="layoutX"');
+                echo form_dropdown('layoutX', $options, 2, 'class="small layout" id="layoutX"');
             ?>
               <span class="inline-block padding010"> x </span>
             <?php
@@ -86,7 +86,7 @@
                   'no'   => 'No'
                 );
 
-                echo form_dropdown('photo_border', $options, 'yes', 'class="small"');    
+                echo form_dropdown('photo_border', $options, 'yes', 'id ="photo_border" class="small"');    
             ?>
             <span class="tip">Should a border be displayed around each photo</span>
         </div>
