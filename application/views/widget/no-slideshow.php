@@ -18,7 +18,7 @@
           <ul>
           <?php foreach ($files as $q => $file) : ?>
           <li>
-            <a href="<?php echo base_url(); ?>widget/view/?id=<?php print $file->id ?>" style="" target="_blank" class="<?php print $options[6] ?>-border">
+            <a href="<?php echo base_url(); ?>widget/view/?id=<?php print $file->id ?>" style="margin:0 <?php print $options[7] ?>px <?php print $options[7] ?>px 0" target="_blank" class="<?php print $options[6] ?>-border">
               <img src="<?php print $file->thumbnail->url ?>" style="width:<?php print $options[2] ?>px; height:<?php print $options[2] ?>px;">
             </a>
           </li>

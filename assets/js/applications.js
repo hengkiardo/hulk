@@ -116,8 +116,8 @@ $(document).ready(function () {
                 id = $hashtag.val().toLowerCase();
             }
               
-            width = parseInt($layoutX.val()) * (parseInt($thumbnailSize.val()) + parseInt($photoPadding.val()) + ($photoBorder.val() == 'yes' ? 10 : 0));
-            height = parseInt($layoutY.val()) * (parseInt($thumbnailSize.val()) + parseInt($photoPadding.val()) + ($photoBorder.val() == 'yes' ? 10 : 0));
+            width = parseInt($layoutX.val()) * (parseInt($thumbnailSize.val()) + parseInt($photoPadding.val()) + ($photoBorder.val() == 'yes' ? 10 : 5));
+            height = parseInt($layoutY.val()) * (parseInt($thumbnailSize.val()) + parseInt($photoPadding.val()) + ($photoBorder.val() == 'yes' ? 10 : 5));
 
             if ($slideShow.val().toLowerCase() == 'yes') {
                 width = width / parseInt($layoutX.val());
@@ -125,6 +125,12 @@ $(document).ready(function () {
             }
 
             snippit += Base64.encode(id + '|' + $slideShow.val().toLowerCase() +'|'+ $thumbnailSize.val() + '|' + $layoutX.val() + '|' + $layoutY.val() + '|' + $backgroundColor.val() + '|' + $photoBorder.val() + '|' + $photoPadding.val() + '|' + width + '|' + height );
+
+            if(width > 400 && width < 700){
+                $("#previewModal").css({
+                    'width' : width + 15,
+                });
+            }
             
             snippit += '" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:' + width + 'px; height: ' + height + 'px" &gt;&lt;/iframe&gt;';
             return snippit;
@@ -220,7 +226,6 @@ hashComments:3,cStyleComments:!0,multilineStrings:!0,tripleQuotedStrings:!0,rege
 !k){b=n;for(var o=void 0,c=b.firstChild;c;c=c.nextSibling)var i=c.nodeType,o=i===1?o?b:c:i===3?N.test(c.nodeValue)?b:o:o;b=(f=o===b?void 0:o)&&"CODE"===f.tagName}b&&(k=f.className.match(g));k&&(k=k[1]);b=!1;for(o=n.parentNode;o;o=o.parentNode)if((o.tagName==="pre"||o.tagName==="code"||o.tagName==="xmp")&&o.className&&o.className.indexOf("prettyprint")>=0){b=!0;break}b||((b=(b=n.className.match(/\blinenums\b(?::(\d+))?/))?b[1]&&b[1].length?+b[1]:!0:!1)&&D(n,b),d={g:k,h:n,i:b},E(d))}}p<h.length?setTimeout(m,
 250):a&&a()}for(var e=[document.getElementsByTagName("pre"),document.getElementsByTagName("code"),document.getElementsByTagName("xmp")],h=[],k=0;k<e.length;++k)for(var t=0,s=e[k].length;t<s;++t)h.push(e[k][t]);var e=q,l=Date;l.now||(l={now:function(){return+new Date}});var p=0,d,g=/\blang(?:uage)?-([\w.]+)(?!\S)/;m()};window.PR={createSimpleLexer:x,registerLangHandler:k,sourceDecorator:u,PR_ATTRIB_NAME:"atn",PR_ATTRIB_VALUE:"atv",PR_COMMENT:"com",PR_DECLARATION:"dec",PR_KEYWORD:"kwd",PR_LITERAL:"lit",
 PR_NOCODE:"nocode",PR_PLAIN:"pln",PR_PUNCTUATION:"pun",PR_SOURCE:"src",PR_STRING:"str",PR_TAG:"tag",PR_TYPE:"typ"}})();
-
 
 $.fn.serializeObject = function()
 {

@@ -12,16 +12,31 @@ class Sl extends CI_Controller {
 	}
 	function index()
 	{
+		$data = array();
+		$media = array();
+
 		if(isset($_GET['h']) && $_GET['h'] != '') {			
 			$params = explode('|', base64_decode($_GET['h']) ) ;
+			$limit = $params[3] * $params[4];
+			$rv = $this->instagram_api->tagsRecentClientId($params[0], $limit );
+
 		}else if(isset($_GET['u']) && $_GET['u'] != ''){
 			$params = explode('|', base64_decode($_GET['u']) ) ;
+			$limit = $params[3] * $params[4];
+			//print_r($params);
+			$userdata = $this->instagram_api->userSearchForWidget($params[0]);
+			$rv = $this->instagram_api->getUserRecent($userdata->data[0]->id);
+			//print_r($rv);
 		}
-	
-		print_r($params);
-		$data['recent_tags_media'] = $this->instagram_api->tagsRecentClientId($params[0], 20);
 		
-		//print_r($data);
+		foreach ($rv->data as $key => $row) :
+			$row->images->id = $row->id;
+			$media[] = $row->images;
+		endforeach;
+
+		$data['options'] = $params;
+		$data['pictures'] = array_chunk($media, $params[3], true);
+		$this->load->view('widget/slideshow', $data);
 	}
 
 }
