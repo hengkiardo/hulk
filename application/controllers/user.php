@@ -5,9 +5,9 @@ class User extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
 		// Set the instagram library access token variable
 		$this->instagram_api->access_token = $this->session->userdata('instagram-token');
+
 		
 	}
 	
@@ -30,7 +30,7 @@ class User extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	
@@ -49,7 +49,7 @@ class User extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	
@@ -69,7 +69,7 @@ class User extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	
@@ -104,7 +104,7 @@ class User extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	
@@ -125,7 +125,7 @@ class User extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	
@@ -146,7 +146,7 @@ class User extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	
@@ -168,6 +168,20 @@ class User extends CI_Controller {
 		print_r($user_relationship_data);
 		echo '</pre>'; 
 		
+	}
+
+	function logout() {
+		$this->session->unset_userdata('instagram-token');
+		$this->session->unset_userdata('instagram-token');
+		$this->session->unset_userdata('instagram-username');
+		$this->session->unset_userdata('instagram-profile-picture');
+		$this->session->unset_userdata('instagram-user-id');
+		$this->session->unset_userdata('instagram-full-name');
+
+		var_dump($this->session->userdata);
+			
+		$this->session->sess_destroy();
+		//redirect('','Location', 300);
 	}
 	
 }

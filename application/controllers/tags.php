@@ -36,7 +36,7 @@ class Tags extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	

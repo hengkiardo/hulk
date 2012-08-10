@@ -15,7 +15,7 @@
   <script src="<?php echo base_url(); ?>assets/js/libs/modernizr-2.5.3.min.js"></script>
   <!-- IE only scripts -->
   <!--[if lt IE 9]>
-  <script src="<?php echo base_url(); ?>assets/js/html5.js" type="text/javascript"></script>
+  <script src="http://html5shiv.googlecode.com/svn-history/r27/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
 </head>
 <body>
@@ -25,44 +25,9 @@
         <div class="container">
           <h1 class="brand">Hulkstagram</h1>
           <?php if($this->session->userdata('instagram-token')) { ?>
-            <h2>Users</h2>
-            <ul>
-              <li><?php echo anchor('/user/profile/', 'Your profile'); ?></li>
-              <li><?php echo anchor('/user/feed/', 'Your feed'); ?></li>
-              <li><?php echo anchor('/user/recent/', 'Your recent media'); ?></li>
-              <li><?php echo anchor('/user/search/', 'Search users'); ?></li>
-              <li><?php echo anchor('/user/follows/', 'Who you follow'); ?></li>
-              <li><?php echo anchor('/user/followed-by/', 'Who follows you'); ?></li>
-              <li><?php echo anchor('/user/requested-by/', 'Requested by'); ?></li>
-              <li><?php echo anchor('/user/relationship/', 'Relationship'); ?></li>
-            </ul>
-            
-            <h2>Media</h2>
-            
-            <ul>
-              <li><?php echo anchor('/media/item/', 'See a media item'); ?></li>
-              <li><?php echo anchor('/media/search/', 'Search for media'); ?></li>
-              <li><?php echo anchor('/media/popular/', 'Popular media'); ?></li>
-              <li><?php echo anchor('/media/comments/', 'Comments about a media item'); ?></li>
-              <li><?php echo anchor('/media/likes/', 'Likes for a media item'); ?></li>
-            </ul>
-            <!--
-            <h2>Tags</h2>
-            
-            <ul>
-              <li><?php echo anchor('/tags/details/', 'Tag details'); ?></li>
-              <li><?php echo anchor('/tags/recent/', 'Recent tags'); ?></li>
-              <li><?php echo anchor('/tags/search/', 'Search tags'); ?></li>
-            </ul>
-            
-            <h2>Locations</h2>
-            
-            <ul>
-              <li><?php echo anchor('/locations/details/', 'Location data'); ?></li>
-              <li><?php echo anchor('/locations/recent/', 'Recent locations'); ?></li>
-              <li><?php echo anchor('/locations/search/', 'Search locations'); ?></li>
-            </ul>
-            -->
+            <div class="right" id="connect-block">
+              <?php echo anchor('/user/logout/', 'Logout', array('class' => 'btn btn-danger', 'title' => 'Logout')); ?>
+            </div>
           <?php } else { ?>
             <div class="right" id="connect-block">
               <span>To see all of the functions please</span>
@@ -77,4 +42,26 @@
     </nav>
 
   </header>
-
+  <?php if($this->session->userdata('instagram-token')) :  ?>
+    <h2>Users</h2>
+      <ul>
+        <li><?php echo anchor('/user/profile/', 'Your profile'); ?></li>
+        <li><?php echo anchor('/user/feed/', 'Your feed'); ?></li>
+        <li><?php echo anchor('/user/recent/', 'Your recent media'); ?></li>
+        <li><?php echo anchor('/user/search/', 'Search users'); ?></li>
+        <li><?php echo anchor('/user/follows/', 'Who you follow'); ?></li>
+        <li><?php echo anchor('/user/followed-by/', 'Who follows you'); ?></li>
+        <li><?php echo anchor('/user/requested-by/', 'Requested by'); ?></li>
+        <li><?php echo anchor('/user/relationship/', 'Relationship'); ?></li>
+      </ul>
+      
+      <h2>Media</h2>
+      
+      <ul>
+        <li><?php echo anchor('/media/item/', 'See a media item'); ?></li>
+        <li><?php echo anchor('/media/search/', 'Search for media'); ?></li>
+        <li><?php echo anchor('/media/popular/', 'Popular media'); ?></li>
+        <li><?php echo anchor('/media/comments/', 'Comments about a media item'); ?></li>
+        <li><?php echo anchor('/media/likes/', 'Likes for a media item'); ?></li>
+      </ul>
+  <?php endif ?>

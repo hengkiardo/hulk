@@ -18,12 +18,6 @@ class Tools extends CI_Controller {
 	{
 		$data['main_view'] = 'widget/create';
 
-		$this->load->view('template',$data);
-	}
-	function create_widget()
-	{
-		$data['main_view'] = 'widget/create';
-
-		$this->load->view('template',$data);
+		$this->load->view('master_template',$data);
 	}
 }

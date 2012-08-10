@@ -43,6 +43,7 @@ class Instagram_api {
         'user_feed' => 'https://api.instagram.com/v1/users/self/feed?access_token=%s&max_id=%d&min_id=%d',
         'user_recent' => 'https://api.instagram.com/v1/users/%s/media/recent/?access_token=%s&max_id=%s&min_id=%s&max_timestamp=%s&min_timestamp=%s',
         'user_search' => 'https://api.instagram.com/v1/users/search?q=%s&access_token=%s',
+        'user_search_for_widget' => 'https://api.instagram.com/v1/users/search?q=%s&client_id=%s',
         'user_follows' => 'https://api.instagram.com/v1/users/%s/follows?access_token=%s',
         'user_followed_by' => 'https://api.instagram.com/v1/users/%s/followed-by?access_token=%s',
         'user_requested_by' => 'https://api.instagram.com/v1/users/self/requested-by?access_token=%s',
@@ -59,6 +60,7 @@ class Instagram_api {
         'remove_like' => 'https://api.instagram.com/v1/media/%d/likes?access_token=%s',
         'tags' => 'https://api.instagram.com/v1/tags/%s?access_token=%s',
         'tags_recent' => 'https://api.instagram.com/v1/tags/%s/media/recent?max_id=%d&min_id=%d&access_token=%s',
+        'tags_recent_with_client_id' => 'https://api.instagram.com/v1/tags/%s/media/recent?client_id=%s&count=%d',
         'tags_search' => 'https://api.instagram.com/v1/tags/search?q=%s&access_token=%s',
         'locations' => 'https://api.instagram.com/v1/locations/%d?access_token=%s',
         'locations_recent' => 'https://api.instagram.com/v1/locations/%d/media/recent/?max_id=%d&min_id=%d&max_timestamp=%d&min_timestamp=%d&access_token=%s',
@@ -204,13 +206,16 @@ class Instagram_api {
     * @return std_class of media found based on parameters given
     */
     function getUserRecent($user_id, $max_id = null, $min_id = null, $max_timestamp = null, $min_timestamp = null) {
+
+        if(empty($this->access_token)){
+            $this->access_token = "915887.f59def8.e035a237540e41788101771cabc2c2f9";
+        }
     
-     $user_recent_request_url = sprintf($this->api_urls['user_recent'], $user_id, $this->access_token, $max_id, $min_id, $max_timestamp, $min_timestamp);
-     
-     //echo '<p>' . $user_recent_request_url . '</p>';
+        $user_recent_request_url = sprintf($this->api_urls['user_recent'], $user_id, $this->access_token, $max_id, $min_id, $max_timestamp, $min_timestamp);
+
+        //var_dump($user_recent_request_url);
     
-     return $this->__apiCall($user_recent_request_url);
-    
+        return $this->__apiCall($user_recent_request_url);
     }
     
     /*
@@ -222,6 +227,20 @@ class Instagram_api {
     function userSearch($user_name) {
     
      $user_search_request_url = sprintf($this->api_urls['user_search'], $user_name, $this->access_token);
+    
+     return $this->__apiCall($user_search_request_url);
+    
+    }
+
+    /*
+    * Function to search for user on widget
+    * Accepts a user name to search for
+    * @param string an Instagram user name
+    * @return std_class user data
+    */
+    function userSearchForWidget($user_name) {
+    
+     $user_search_request_url = sprintf($this->api_urls['user_search_for_widget'], $user_name, $this->codeigniter_instance->config->item('instagram_client_id'));
     
      return $this->__apiCall($user_search_request_url);
     
@@ -443,6 +462,22 @@ return $this->__apiCall($post_media_comment_url);*/
     
      $tags_recent_request_url = sprintf($this->api_urls['tags_recent'], $tag, $max_id, $min_id, $this->access_token);
     
+     return $this->__apiCall($tags_recent_request_url);
+    
+    }
+
+
+    /*
+    * Function to get a list of recently tagged media
+    * @param string tag
+    * @param int return media after this max_id
+    * @param int return media before this min_id
+    * @return std_class recently tagged media
+    */
+    function tagsRecentClientId($tag, $count=20) {
+    
+     $tags_recent_request_url = sprintf($this->api_urls['tags_recent_with_client_id'], $tag, $this->codeigniter_instance->config->item('instagram_client_id'), $count);
+        //var_dump($tags_recent_request_url)
      return $this->__apiCall($tags_recent_request_url);
     
     }

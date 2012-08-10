@@ -1,0 +1,54 @@
+@import "less/reset.less";
+// Core variables and mixins
+@import "less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "less/mixins.less";
+
+body{
+	margin: 0;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+
+ul, ol{
+	margin:0;
+	padding:0;
+	border:none;
+	list-style-type:none;
+	clear: both;
+}
+
+#content{
+	margin:0
+}
+#grid{
+	li{
+		li{
+			display: inline-block;
+			margin-bottom: 1px;
+		}
+
+		ul{
+			clear: both;
+		}
+
+		a{
+			display: block;
+
+			img{
+				.border-radius(5px);
+				padding: 2px;
+			}
+
+			&.yes-border{
+				img{
+					border:1px solid #987;
+				}
+			}
+		}
+	}
+}
+

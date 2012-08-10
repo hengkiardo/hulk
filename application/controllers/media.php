@@ -107,7 +107,7 @@ class Media extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	
@@ -119,7 +119,7 @@ class Media extends CI_Controller {
 		
 		$this->load->vars($data);
 		
-		$this->load->view('template');
+		$this->load->view('master_template');
 		
 	}
 	

@@ -1,4 +1,4 @@
-<?=form_open('tools/create_widget/', array("class"=>"", "id"=>"formCreateWidget", "onSubmit" => "createWidget(); return false" ))?>
+<?=form_open('tools/create_widget/', array("class"=>"", "id"=>"formCreateWidget", "onSubmit" => "return false" ))?>
     <div class="clearfix">
         <?=form_label('Username', 'username')?>
         <div class="prepend">
@@ -24,7 +24,7 @@
                   'name'        => 'hashtag',
                   'id'          => 'hashtag',
                   'maxlength'   => '100',
-                  'placeholder'  => 'ex : jakarta',
+                  'value'       => 'jakarta',
                   'class'       => 'input-widget medium have-add-on-left'
                 );
                 print form_input($data); 
@@ -54,6 +54,7 @@
                   'name'        => 'thumbnail_size',
                   'id'          => 'thumbnail_size',
                   'maxlength'   => '3',
+                  'value'       => '100',
                   'class'       => 'input-widget left small'
                 );
                 print form_input($data); 
@@ -66,13 +67,14 @@
         <?=form_label('Layout', 'layoutX')?>
         <div class="prepend">
             <?php
-                $options = array("1"=>1,2,3,4,5,6,7,8,9,10);
+                $options = array("1"=>1,2,3,4,5);
 
                 echo form_dropdown('layoutX', $options, 2, 'class="small layout" id="layoutX"');
             ?>
               <span class="inline-block padding010"> x </span>
             <?php
-                echo form_dropdown('layoutY', $options, '1', 'class="small layout" id="layoutY"');    
+                $optionsY = array("1"=>1,2,3,4,5);
+                echo form_dropdown('layoutY', $optionsY, 3, 'class="small layout" id="layoutY"');    
             ?>
         </div>
     </div>
@@ -101,7 +103,7 @@
                   'name'        => 'backgroundColor',
                   'id'          => 'backgroundColor',
                   'maxlength'   => '100',
-                  'value'       => '9ea3a0',
+                  'value'       => 'ffffff',
                   'class'       => 'input-widget small have-add-on-left'
                 );
                 print form_input($data); 
@@ -117,6 +119,7 @@
                   'name'        => 'photo_padding',
                   'id'          => 'photo_padding',
                   'maxlength'   => '2',
+                  'value'       => '5',
                   'class'       => 'input-widget left small'
                 );
                 print form_input($data); 
@@ -127,8 +130,9 @@
     </div>
     <div class="clearfix"></div>
     <div class="buttons">
-        <?=form_submit(array("name" => "generate_code", "value" => "Get Code", "class" => "btn btn-info", "id" => "btnGenerateCode",  "onSubmit" => "createWidget(); return false" ))?>
+        <?=form_submit(array("name" => "generate_code", "value" => "Get Code", "class" => "btn btn-info", "id" => "btnGenerateCode",  "onSubmit" => "return false" ))?>
         &nbsp;
-        <?= form_button(array("value" => true, "content" =>"Preview", "name"=> "preview_button", "id"=>"btnPreviewWidget", "class" => "btn btn-success")) ?>
+        <?= form_button(array("value" => true, "content" =>"Preview", "name"=> "preview_button", "id"=>"btnPreviewWidget", "class" => "btn btn-success", "data-toggle"=>"modal")) ?>
     </div>
 <?=form_close();?>
+<?php $this->load->view('widget/preview'); ?>
