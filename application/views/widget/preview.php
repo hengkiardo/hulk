@@ -18,7 +18,7 @@
     
         </pre>
 		<p>
-			Paste this code anywhere on your website where you want the widget to be displayed and remember to follow us on <a href="https://twitter.com/snapwidget" target="_blank">Twitter</a> or <a href="http://www.facebook.com/snapwidget" target="_blank">Facebook</a> for service updates.
+			Paste this code anywhere on your website where you want the widget to be displayed and remember to follow us on <a href="https://twitter.com/hulkstagram" target="_blank">Twitter</a> or <a href="http://www.facebook.com/hulkstagram" target="_blank">Facebook</a> for service updates.
 		</p>
 		<br/>
 	</div>
