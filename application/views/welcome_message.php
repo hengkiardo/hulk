@@ -5,12 +5,12 @@
 		
 			<?php if(is_array($media_data)) { ?>
 			
-			<ul class="image-list">
+		<ul class="image-list">
 			
 			<?php foreach($media_data as $media) { ?>
 			
-				<li>
-					<?php echo anchor($media->images->standard_resolution->url, img(array('src' => $media->images->thumbnail->url, 'width' => '140', 'height' => '140')), 'class="fancybox" rel="fancybox_group"'); ?>
+				<li class="item">
+					<?php echo anchor($media->images->standard_resolution->url, img(array('src' => $media->images->thumbnail->url)), 'class="fancybox" rel="fancybox_group"'); ?>
 				</li>
 				
 			<?php } ?>
