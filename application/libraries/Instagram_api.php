@@ -49,7 +49,7 @@ class Instagram_api {
         'user_requested_by' => 'https://api.instagram.com/v1/users/self/requested-by?access_token=%s',
         'user_relationship' => 'https://api.instagram.com/v1/users/%s/relationship?access_token=%s',
         'modify_user_relationship' => 'https://api.instagram.com/v1/users/%s/relationship?action=%s&access_token=%s',
-        'media' => 'https://api.instagram.com/v1/media/%d?access_token=%s',
+        'media' => 'https://api.instagram.com/v1/media/%s?access_token=%s',
         'media_search' => 'https://api.instagram.com/v1/media/search?lat=%s&lng=%s&max_timestamp=%d&min_timestamp=%d&distance=%d&access_token=%s',
         'media_popular' => 'https://api.instagram.com/v1/media/popular?access_token=%s',
         'media_comments' => 'https://api.instagram.com/v1/media/%d/comments?access_token=%s',
@@ -321,10 +321,16 @@ class Instagram_api {
     * @return std_class data about the media item
     */
     function getMedia($media_id) {
+
+        if(empty($this->access_token)){
+            $this->access_token = "915887.f59def8.e035a237540e41788101771cabc2c2f9";
+        }
     
-     $media_request_url = sprintf($this->api_urls['media'], $media_id, $this->access_token);
+        $media_request_url = sprintf($this->api_urls['media'], $media_id, $this->access_token);
+
+        var_dump($media_request_url);
     
-     return $this->__apiCall($media_request_url);
+        return $this->__apiCall($media_request_url);
     
     }
     
