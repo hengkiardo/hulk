@@ -84,6 +84,22 @@ $(document).ready(function () {
         return false;
     });
 
+
+    var $container = $('.image-list');
+    $container.imagesLoaded(function(){
+      $container.masonry({
+        itemSelector : '.item',
+        gutterWidth: 5,
+        isFitWidth: true,
+        isAnimated: true,
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+      });
+    });
+
     function generateSnippit() {
         var snippit, $username = $('#username'),
         $hashtag = $('#hashtag'),

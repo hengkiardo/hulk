@@ -2732,6 +2732,12 @@ ol.linenums li {
   background-color: #fff;
   cursor: default;
 }
+.item {
+  width: 150px;
+  margin: 10px;
+  float: left;
+  list-style: none;
+}
 .modal-open .dropdown-menu {
   z-index: 2050;
 }
