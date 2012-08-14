@@ -7,4 +7,5 @@
 user_guide/
 assets/css/hulk.css
 assets/helper/*
+assets/css/less/*.css
 Hulk.komodoproject
