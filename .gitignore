@@ -6,6 +6,7 @@
 */.DS_Store
 user_guide/
 assets/css/hulk.css
+assets/css/*.css
 assets/helper/*
 assets/css/less/*.css
 Hulk.komodoproject
