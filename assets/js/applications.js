@@ -10,10 +10,12 @@ $(document).ready(function () {
         }
     });
 
-    var $container = $('.image-list');
+    
+    var $container = $('#content-mansory');
+
     $container.imagesLoaded(function(){
       $container.masonry({
-        itemSelector : '.item',
+        itemSelector : '.item-media',
         gutterWidth: 5,
         isFitWidth: true,
         isAnimated: true,
@@ -23,8 +25,7 @@ $(document).ready(function () {
             queue: false
         }
       });
-    });
-
+      
     /*
     var wallInstagram = $('section#wall').instagramPictures({
                                 accessToken: '915887.f59def8.e035a237540e41788101771cabc2c2f9'

@@ -1,6 +1,3 @@
-<?php $input = array("a", "b", "c", "d", "e"); ?>
-<?php print_r(array_splice($input, 0, count($input)-1 )); ?>
-<?php //print_r(array_slice($input,4)); ?>
 <div id="media-wrapper" class="media-wrapper">
 	<div class="media-inner" id="media_inner">
 		<div class="media-user" id="media_user">

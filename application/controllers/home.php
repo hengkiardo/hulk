@@ -6,6 +6,8 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('ezsql_codeigniter');
+		$this->load->helper('date');
+		$this->load->helper('functions');
 		$this->ezsql = new ezSQL_codeigniter;
 
 		$this->instagram_api->access_token = $this->session->userdata('instagram-token');

@@ -25,7 +25,7 @@
 // Core variables and mixins
 @import "less/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "less/mixins.less";
-
+@import "less/sprites.less";
 // Base CSS
 @import "less/type.less";
 @import "less/code.less";
@@ -90,18 +90,11 @@ a:active{
 	    }
 	}
 }
-
-
 ul, ol{
 	margin:0;
 	padding:0;
 	border:none;
 	list-style-type:none;
-}
-
-.image-list li {
-	float:left;
-	margin-right:10px;
 }
 
 // Quick floats
@@ -158,15 +151,17 @@ ol.linenums li {
 }
 
 // Components: Nav
+
 @import "less/navs.less";
 @import "less/navbar.less";
 @import "less/breadcrumbs.less";
 @import "less/pagination.less";
 @import "less/pager.less";
-@import "less/masonry.less";
 
 @import "less/modals.less";
 @import "less/close.less";
+
+@import "custom/masonry-grid.less";
 
 @import "custom/avatar.less";
 @import "custom/widget.less";
