@@ -1,0 +1,169 @@
+#main {
+    min-height: 760px;
+}
+#main .wrapper {
+    padding: 0;
+    width: 100%;
+}
+.media-wrapper {
+    position: relative;
+}
+.media-user {
+    height: 40px;
+    padding: 20px 0 0 45px;
+    position: relative;
+}
+.media-user h2 {
+    display: inline-block;
+    padding-left: 0;
+    position: relative;
+    z-index: 15;
+
+    a {
+        display: inline;
+        float: left;
+        margin:0;
+        font-size: 16px;
+        color: #444;
+        padding: 0 24px 0 11px;
+        position: relative;
+        .border-radius(4px);
+
+        &:hover {
+            text-decoration:none;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.5);
+            @shadow_internal : 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+            .box-shadow(@shadow_internal);
+        }
+        &:active {
+            color: #333;
+            background-color: rgba(0, 0, 0, 0.04);
+            @var_shadow : 0 0 1px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.8);
+            .box-shadow(@var_shadow);
+        }
+    }
+    b {
+        width: 7px;
+        height: 5px;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -1px;
+        .opacity(70);
+        .transition(opacity 0.2s ease-out);
+        background: url(../images/glyph-arrow-down.png);
+    }
+}
+
+.user-tooltip-open .media-user h2 a:hover, 
+.user-tooltip-open .media-user h2 a:active {
+    background: none;
+    .box-shadow(none);
+}
+.user-tooltip-open .media-user h2 b {
+    opacity: 0;
+}
+.user-tooltip-open .user-tooltip {
+    opacity: 1;
+    pointer-events: all;
+}
+.user-avatar {
+    left: 0;
+    position: absolute;
+    top: 20px;
+}
+.user-tooltip {
+    .transition(opacity 0.2s ease-out);
+    background-color: rgba(255, 255, 255, 0.9);
+    .border-radius(4px);
+    @_shadow : 0 1px 5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+    .box-shadow(@_shadow) ;
+    left: 45px;
+    max-width: 289px;
+    min-width: 249px;
+    opacity: 0;
+    padding: 50px 10px 7px 11px;
+    pointer-events: none;
+    position: absolute;
+    top: 20px;
+    word-wrap: break-word;
+    z-index: 14;
+
+    ul{
+        list-style: none;
+        margin: 0;
+    }
+    li {
+        display: inline;
+        float: left;
+        margin-right: 10px;
+    }
+
+    #following {
+        position: absolute;
+        right: 10px;
+        top: 9px;
+    }
+    #follow-indicator {
+        display: inline-block;
+        position: relative;
+        top: -4px;
+        width: 30px;
+    }
+}
+
+.user-longname {
+    h2 {
+        margin-right: 60px;
+    }
+    
+    .user-tooltip {
+        max-width: 329px;
+        min-width: 289px;
+    }
+}
+
+.user-longername {
+    h2 {
+        margin-right: 60px;
+    }
+
+    .user-tooltip {
+        max-width: 349px;
+        min-width: 309px;
+    }
+}
+
+.user-tooltip-inner {
+    border-top: 1px dashed #ddd;
+    margin: -9px 0 0 0;
+    padding: 10px 0 0 0;
+}
+#following {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+}
+#follow-indicator {
+    display: inline-block;
+    position: relative;
+    top: -4px;
+    width: 30px;
+}
+.media-user-private {
+    color: #000000;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    text-shadow: 0 1px 0 #FFFFFF;
+    top: 20px;
+
+    strong, span{
+        clear: right;
+        display: inline;
+        float: right;
+    }
+}

@@ -19,7 +19,7 @@
             <?php foreach($pictures as $key => $files) : ?>
               <?php foreach ($files as $q => $file) : ?>
               <li>
-                <a href="<?php echo base_url(); ?>widget/view/?id=<?php print $file->id ?>" style="margin:0 <?php print $options[7] ?>px <?php print $options[7] ?>px 0" target="_blank" class="<?php print $options[6] ?>-border">
+                <a href="<?php echo base_url(); ?>widgets/view/<?php print $file->id ?>" style="margin:0 <?php print $options[7] ?>px <?php print $options[7] ?>px 0" target="_blank" class="<?php print $options[6] ?>-border">
                   <?php if($options[2] > 600 || $options[2] > 300) : ?>
                     <img src="<?php print $file->standard_resolution->url ?>" style="width:<?php print $options[2] ?>px;?>px;">
                   <?php elseif($options[2] < 300) : ?>

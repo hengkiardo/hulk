@@ -26,13 +26,14 @@ class In extends CI_Controller {
 			//print_r($params);
 			$userdata = $this->instagram_api->userSearchForWidget($params[0]);
 			$rv = $this->instagram_api->getUserRecent($userdata->data[0]->id);
-			//print_r($rv);
 		}
 		
 		foreach ($rv->data as $key => $row) :
 			$row->images->id = $row->id;
 			$media[] = $row->images;
 		endforeach;
+
+		$media = array_splice($media, 0, $params[3]* $params[4] );
 
 		$data['options'] = $params;
 		$data['pictures'] = array_chunk($media, $params[3], true);

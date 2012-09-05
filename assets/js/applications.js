@@ -1,4 +1,30 @@
 $(document).ready(function () {
+
+
+    $("a[rel=fancybox_group]").fancybox({
+        'transitionIn'      : 'elastic',
+        'transitionOut'     : 'elastic',
+        'titlePosition'     : 'over',
+        'titleFormat'       : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' +  (currentIndex + 1) + ' / ' + currentArray.length + ' ' + title + '</span>';
+        }
+    });
+
+    var $container = $('.image-list');
+    $container.imagesLoaded(function(){
+      $container.masonry({
+        itemSelector : '.item',
+        gutterWidth: 5,
+        isFitWidth: true,
+        isAnimated: true,
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+      });
+    });
+
     /*
     var wallInstagram = $('section#wall').instagramPictures({
                                 accessToken: '915887.f59def8.e035a237540e41788101771cabc2c2f9'
@@ -20,6 +46,10 @@ $(document).ready(function () {
         $(this).data('timer', wait);
     });
     */
+
+
+
+    /* CREATE WIDGETS */
 
     $('#username').change(function () {
         $('#hashtag').val('');
@@ -51,7 +81,6 @@ $(document).ready(function () {
         $(this).ColorPickerSetColor(this.value);
     });
 
-
     $("#previewModal").modal({
         keyboard: true,
         backdrop: 'static',
@@ -60,44 +89,20 @@ $(document).ready(function () {
 
     $("#btnPreviewWidget").click(function(e){
         var snippit_content = generateSnippit().replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-        console.log(snippit_content);
-        
         if (snippit_content) {
             $("#previewModal").find('.modal-body').html(snippit_content).end().modal('show');
         }
-
         return false;
     });
 
     $('#btnGenerateCode').click(function() {
         var snippit = generateSnippit();
-
         if (snippit) {
-            $('#widgetCode')
-                .html('&lt;!-- Hulkstagram Widget --&gt;' + '\n' + snippit);
-
+            $('#widgetCode').html('&lt;!-- Hulkstagram Widget --&gt;' + '\n' + snippit);
             prettyPrint();
-
             $("#getCodeModal").modal('show');
         }
-
         return false;
-    });
-
-
-    var $container = $('.image-list');
-    $container.imagesLoaded(function(){
-      $container.masonry({
-        itemSelector : '.item',
-        gutterWidth: 5,
-        isFitWidth: true,
-        isAnimated: true,
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-      });
     });
 
     function generateSnippit() {
@@ -136,8 +141,8 @@ $(document).ready(function () {
             height = parseInt($layoutY.val()) * (parseInt($thumbnailSize.val()) + parseInt($photoPadding.val()) + ($photoBorder.val() == 'yes' ? 10 : 5));
 
             if ($slideShow.val().toLowerCase() == 'yes') {
-                width = width / parseInt($layoutX.val());
-                height = height / parseInt($layoutY.val());
+                width = width / parseInt($layoutX.val()) - 5;
+                height = height / parseInt($layoutY.val()) + 5;
             }
 
             snippit += Base64.encode(id + '|' + $slideShow.val().toLowerCase() +'|'+ $thumbnailSize.val() + '|' + $layoutX.val() + '|' + $layoutY.val() + '|' + $backgroundColor.val() + '|' + $photoBorder.val() + '|' + $photoPadding.val() + '|' + width + '|' + height );
@@ -147,7 +152,6 @@ $(document).ready(function () {
                     'width' : width + 15,
                 });
             }
-            
             snippit += '" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:' + width + 'px; height: ' + height + 'px" &gt;&lt;/iframe&gt;';
             return snippit;
         }
@@ -202,16 +206,28 @@ $(document).ready(function () {
             return utftext;
         }
     }
-
-    $("a[rel=fancybox_group]").fancybox({
-            'transitionIn'      : 'elastic',
-            'transitionOut'     : 'elastic',
-            'titlePosition'     : 'over',
-            'titleFormat'       : function(title, currentArray, currentIndex, currentOpts) {
-                return '<span id="fancybox-title-over">Image ' +  (currentIndex + 1) + ' / ' + currentArray.length + ' ' + title + '</span>';
-            }
-    });
+    /* END CREATE WIDGETS */
 });
+
+function toggleUserTooltip() {
+    //  Toggle Visibility of User Tooltip
+    $('#media_inner').toggleClass('user-tooltip-open');
+}
+
+function toggleMediaState(focusTarget) {
+    //  Toggling the open and closed state of the media.
+    $("body").toggleClass("media-open");
+
+    //  If the media is closed, the media-opened class should also be removed.
+    if($('.media-open').length == 0) {
+        $('.media-opened').removeClass('media-opened');
+    }
+
+    //  If we define a focusTarget, focus on this element.
+    if (typeof focusTarget != "undefined") {
+        $(focusTarget).focus();
+    }
+}
 
 
 var q=null;window.PR_SHOULD_USE_CONTINUATION=!0;

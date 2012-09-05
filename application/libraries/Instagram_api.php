@@ -169,12 +169,14 @@ class Instagram_api {
     * @return std_class data about the Instagram user
     */
     function getUser($user_id) {
+
+        if(empty($this->access_token)){
+            $this->access_token = "915887.f59def8.e035a237540e41788101771cabc2c2f9";
+        }
     
-     $user_request_url = sprintf($this->api_urls['user'], $user_id, $this->access_token);
-     //var_dump($user_request_url);
-    
-     return $this->__apiCall($user_request_url);
-    
+        $user_request_url = sprintf($this->api_urls['user'], $user_id, $this->access_token);
+        //var_dump($user_request_url);
+        return $this->__apiCall($user_request_url);
     }
     
     /*
@@ -327,8 +329,6 @@ class Instagram_api {
         }
     
         $media_request_url = sprintf($this->api_urls['media'], $media_id, $this->access_token);
-
-        var_dump($media_request_url);
     
         return $this->__apiCall($media_request_url);
     

@@ -1826,6 +1826,11 @@ a:hover {
 }
 body {
   margin: 0;
+  background: url("http://d36xtkk24g8jdx.cloudfront.net/bluebar/b9fcad8/images/bg/body_noise_media.png") repeat top left;
+}
+a:hover,
+a:active {
+  text-decoration: none;
 }
 .left {
   float: left;
@@ -1834,7 +1839,7 @@ body {
   float: right;
 }
 #main {
-  margin: 55px auto 0;
+  margin: 45px auto 0;
 }
 #connect-block {
   margin: 10px 0 0 0;
@@ -1858,6 +1863,7 @@ body {
 }
 #connect-block a.btn-connect:hover {
   background-position: 0 -29px;
+  text-decoration: none;
 }
 ul,
 ol {
@@ -2869,6 +2875,142 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
+.avatar-xsmall,
+.account-state > ul > li img,
+.avatar-xsmall img,
+.account-state > ul > li img img {
+  width: 22px;
+  height: 22px;
+}
+.avatar-small,
+.like-avatar,
+.comment-avatar,
+.avatar-small img,
+.like-avatar img,
+.comment-avatar img {
+  width: 30px;
+  height: 30px;
+}
+.avatar-medium,
+.user-avatar,
+.avatar-medium img,
+.user-avatar img {
+  width: 40px;
+  height: 40px;
+}
+.avatar-medium,
+.user-avatar,
+.avatar-medium b,
+.user-avatar b {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.avatar-large,
+.avatar-large img {
+  width: 70px;
+  height: 70px;
+}
+.avatar-large,
+.avatar-large b {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.avatar-profile,
+.avatar-profile img {
+  width: 110px;
+  height: 110px;
+}
+.avatar-profile,
+.avatar-profile b {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.img-outset,
+.img-inset,
+.page-media .current-user-avatar {
+  background: none;
+}
+.img-outset img,
+.img-inset img,
+.page-media .current-user-avatar img {
+  width: auto;
+  display: block;
+  visibility: visible;
+}
+@media screen and (min-width: 0px) {
+  .img,
+  .img-outset,
+  .img-inset,
+  .page-media .current-user-avatar {
+    position: relative;
+    display: inline-block;
+  }
+  .img b,
+  .img-outset b,
+  .img-inset b,
+  .page-media .current-user-avatar b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .img img {
+    display: block;
+    visibility: hidden;
+  }
+  .img-outset,
+  .img-inset,
+  .page-media .current-user-avatar {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: no-repeat 0 0;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+  }
+  .img-outset img,
+  .img-inset img,
+  .page-media .current-user-avatar img {
+    display: block;
+    visibility: hidden;
+  }
+  .img-outset b,
+  .img-inset b,
+  .page-media .current-user-avatar b {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }
+  span.img-inset,
+  .page-media span.current-user-avatar {
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 1px rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 1px rgba(255, 255, 255, 0.1);
+  }
+  span.img-inset b,
+  .page-media span.current-user-avatar b {
+    -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15), inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15), inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15), inset 0 0 2px 0 rgba(0, 0, 0, 0.2);
+  }
+  span.img-outset {
+    -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  span.img-outset b {
+    -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
 #formCreateWidget {
   width: auto;
   display: block;
@@ -3115,6 +3257,180 @@ button.close {
 }
 .colorpicker_slider {
   background-position: bottom;
+}
+#main {
+  min-height: 760px;
+}
+#main .wrapper {
+  padding: 0;
+  width: 100%;
+}
+.media-wrapper {
+  position: relative;
+}
+.media-user {
+  height: 40px;
+  padding: 20px 0 0 45px;
+  position: relative;
+}
+.media-user h2 {
+  display: inline-block;
+  padding-left: 0;
+  position: relative;
+  z-index: 15;
+}
+.media-user h2 a {
+  display: inline;
+  float: left;
+  margin: 0;
+  font-size: 16px;
+  color: #444;
+  padding: 0 24px 0 11px;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.media-user h2 a:hover {
+  text-decoration: none;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+.media-user h2 a:active {
+  color: #333;
+  background-color: rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+.media-user h2 b {
+  width: 7px;
+  height: 5px;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -1px;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  background: url(../images/glyph-arrow-down.png);
+}
+.user-tooltip-open .media-user h2 a:hover,
+.user-tooltip-open .media-user h2 a:active {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.user-tooltip-open .media-user h2 b {
+  opacity: 0;
+}
+.user-tooltip-open .user-tooltip {
+  opacity: 1;
+  pointer-events: all;
+}
+.user-avatar {
+  left: 0;
+  position: absolute;
+  top: 20px;
+}
+.user-tooltip {
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  background-attachment: scroll;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  left: 45px;
+  max-width: 289px;
+  min-width: 249px;
+  opacity: 0;
+  padding: 50px 10px 7px 11px;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  word-wrap: break-word;
+  z-index: 14;
+}
+.user-tooltip ul {
+  list-style: none;
+  margin: 0;
+}
+.user-tooltip li {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+}
+.user-tooltip #following {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+}
+.user-tooltip #follow-indicator {
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  width: 30px;
+}
+.user-longname h2 {
+  margin-right: 60px;
+}
+.user-longname .user-tooltip {
+  max-width: 329px;
+  min-width: 289px;
+}
+.user-longername h2 {
+  margin-right: 60px;
+}
+.user-longername .user-tooltip {
+  max-width: 349px;
+  min-width: 309px;
+}
+.user-tooltip-inner {
+  border-top: 1px dashed #ddd;
+  margin: -9px 0 0 0;
+  padding: 10px 0 0 0;
+}
+#following {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+}
+#follow-indicator {
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  width: 30px;
+}
+.media-user-private {
+  color: #000000;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  text-shadow: 0 1px 0 #FFFFFF;
+  top: 20px;
+}
+.media-user-private strong,
+.media-user-private span {
+  clear: right;
+  display: inline;
+  float: right;
 }
 /* Responsive */
 .hidden {

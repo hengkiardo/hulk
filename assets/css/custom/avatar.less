@@ -1,0 +1,129 @@
+.avatar-xsmall, 
+.account-state>ul>li img, 
+.avatar-xsmall img, 
+.account-state>ul>li img img {
+    width: 22px;
+    height: 22px;
+}
+
+.avatar-small, 
+.like-avatar, 
+.comment-avatar, 
+.avatar-small img, 
+.like-avatar img, 
+.comment-avatar img {
+    width: 30px;
+    height: 30px;
+}
+
+.avatar-medium, 
+.user-avatar, 
+.avatar-medium img, 
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+.avatar-medium, 
+.user-avatar, 
+.avatar-medium b, 
+.user-avatar b {
+    .border-radius(4px);
+}
+
+.avatar-large, 
+.avatar-large img {
+    width: 70px;
+    height: 70px;
+}
+
+.avatar-large, 
+.avatar-large b {
+    .border-radius(4px);
+}
+
+.avatar-profile, 
+.avatar-profile img {
+    width: 110px;
+    height: 110px;
+}
+
+.avatar-profile, 
+.avatar-profile b {
+    .border-radius(3px);
+}
+
+.img-outset, 
+.img-inset, 
+.page-media .current-user-avatar {
+    background: none;
+}
+
+.img-outset img, 
+.img-inset img,
+.page-media .current-user-avatar img {
+    width: auto;
+    display: block;
+    visibility: visible;
+}
+@media screen and (min-width: 0px) {
+    .img, 
+    .img-outset, 
+    .img-inset, 
+    .page-media .current-user-avatar {
+        position: relative;
+        display: inline-block;
+
+        b {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%
+        }
+    }   
+
+    .img img {
+        display: block;
+        visibility: hidden;
+    }
+    
+    .img-outset, 
+    .img-inset, 
+    .page-media .current-user-avatar {
+        .border-radius(3px);
+        background: no-repeat 0 0;
+        .background-size(100%);
+
+        img {
+            display: block;
+            visibility: hidden;
+        }
+
+        b {
+            .border-radius(2px);
+        }
+    }
+
+    span.img-inset, 
+    .page-media span.current-user-avatar {
+        @var_shadow : 0 1px 0 rgba(255, 255, 255, 0.4),  0 1px 0 1px rgba(255, 255, 255, 0.1);
+        .box-shadow(@var_shadow);
+
+        b {
+            @var_shadow : inset 0 0 0 1px rgba(0, 0, 0, .15),  inset 0 0 2px 0 rgba(0, 0, 0, .2);
+            .box-shadow(@var_shadow);
+        }
+    }
+
+    span.img-outset {
+        @var_shadow : 0 0 0 1px rgba(0, 0, 0, .1),  0 1px 2px rgba(0, 0, 0, .2);
+        .box-shadow( @var_shadow );
+
+        b {
+            @var_shadow : inset 0 0 0 1px rgba(255, 255, 255, .1),  inset 0 1px 0 rgba(255, 255, 255, .3);
+            .box-shadow(@var_shadow);
+        }
+    }
+}

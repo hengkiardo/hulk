@@ -46,7 +46,13 @@
 
 body{
 	margin: 0;
+  background: url("http://d36xtkk24g8jdx.cloudfront.net/bluebar/b9fcad8/images/bg/body_noise_media.png") repeat top left;
 }
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
 .left{
 	float: left;
 }
@@ -54,7 +60,7 @@ body{
 	float: right;
 }
 #main{
-	margin:55px auto 0;
+	margin:45px auto 0;
 }
 
 #connect-block{
@@ -80,6 +86,7 @@ body{
 
 	    &:hover{
 	    	 background-position: 0 -29px;
+         text-decoration: none;
 	    }
 	}
 }
@@ -161,8 +168,10 @@ ol.linenums li {
 @import "less/modals.less";
 @import "less/close.less";
 
+@import "custom/avatar.less";
 @import "custom/widget.less";
 @import "custom/colorpicker.less";
+@import "custom/single-media.less";
 
 
 /* Responsive */

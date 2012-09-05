@@ -16,13 +16,16 @@ class Widgets extends CI_Controller {
 	}
 
 	function view($media_id){
-		var_dump($media_id);
 
 		$rv = $this->instagram_api->getMedia($media_id);
+
+		$creator = $this->instagram_api->getUser($rv->data->user->id);
 
 		$data['main_view'] = 'widget/view-media';
 
 		$data['media'] = $rv;
+		
+		$data['creator'] = $creator->data;
 
 		$this->load->view('master_template',$data);
 	}
