@@ -13,7 +13,7 @@
 
 	.pic{
 		position: relative;
-		padding: 10px 10px 5px;
+		padding: 14px 10px 5px;
 		text-align: center;
 		display: block;
 		margin: auto;
@@ -21,34 +21,37 @@
 		img{
 			display: inline-block;
 			zoom: 1;
-			width: 194px;
-			height: 194px;
+			width: 195px;
+			height: 195px;
 			font-size: 0;
 			color: transparent;
 			background-color: #fff;
 		}
 	}
 	.text{
-		padding: 0 15px 0;
+		padding: 0 12px;
 		line-height: 15px;
 		color: #222;
 		overflow: hidden;
 	}
 	.statistics {
-		padding: 5px 15px;
+		padding: 5px 13px;
 		border-bottom: solid 1px #EAE8E3;
 		color: gray;
 
 		span{
 			float: none !important;
-			margin:0 5px 0 0;
+			margin:0 3px 0 0;
 		}
 	}
 }
 
+.lnk_user{
+	font-weight: 600;
+}
 .convo {
 	position: relative;
-	padding: 7px 15px;
+	padding: 7px 13px;
 
 	.lnk_user img{
 		float: left;
@@ -62,12 +65,20 @@
 		color: #5686AC;
 		display: block;
 	}
-
+	.time{
+		display: block;
+		color: gray;
+		font-size: 10px;
+	}
 	p {
 		font-size: 11px;
 		line-height: 15px;
 		margin: 0;
 		margin-left: 40px;
 		word-wrap: break-word;
+	}
+
+	&.comment{
+		background: #f3f3f3
 	}
 }

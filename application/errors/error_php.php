@@ -1,4 +1,4 @@
-<div style="background:#222; color:#347338; padding:10px 5px">
+<div style="background:#222; color:#18D81B; padding:10px 5px">
 
 <h4>A PHP Error was encountered</h4>
 

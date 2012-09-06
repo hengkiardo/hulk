@@ -25,7 +25,7 @@
         <div class="container">
           <h1 class="brand">Hulkstagram</h1>
           <?php if($this->session->userdata('instagram-token')) { ?>
-            <div class="right" id="connect-block">
+            <div class="right">
               <?php echo anchor('/user/logout/', 'Logout', array('class' => 'btn btn-danger', 'title' => 'Logout')); ?>
             </div>
           <?php } else { ?>

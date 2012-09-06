@@ -7,8 +7,8 @@ class User extends CI_Controller {
 		parent::__construct();
 		// Set the instagram library access token variable
 		$this->instagram_api->access_token = $this->session->userdata('instagram-token');
-
-		
+		$this->load->helper('date');
+		$this->load->helper('functions');
 	}
 	
 	function index()
@@ -45,11 +45,10 @@ class User extends CI_Controller {
 
 		//print_r($data);
 
-		$data['main_view'] = 'user_feed';
-		
-		$this->load->vars($data);
-		
-		$this->load->view('master_template');
+		$data['main_view'] = 'user/user_feed';
+
+		$this->load->view('master_template', $data);
+
 		
 	}
 	
@@ -65,11 +64,9 @@ class User extends CI_Controller {
 		
 		$data['user_recent_data'] = $this->instagram_api->getUserRecent($user_id);
 		
-		$data['main_view'] = 'user_recent';
+		$data['main_view'] = 'user/user_recent';
 		
-		$this->load->vars($data);
-		
-		$this->load->view('master_template');
+		$this->load->view('master_template', $data);
 		
 	}
 	

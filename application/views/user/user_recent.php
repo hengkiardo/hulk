@@ -1,6 +1,6 @@
 <section id="content-mansory" class="main-content">
-	<?php if(is_object($popular_media)) : ?> 
-		<?php foreach($popular_media as $media_data) : ?>
+	<?php if(is_object($user_recent_data)) : ?> 
+		<?php foreach($user_recent_data as $media_data) : ?>
 			<?php if(is_array($media_data)) : ?>
 				<?php foreach($media_data as $media) : ?>
 					<div class="item-media" data-media-id="<?php $media->id ?>">
@@ -39,10 +39,11 @@
 								</span>
 							</p>
 						</div>
+
 						<?php if($media->comments->count > 0 ) : ?>
 						<?php
 							if($media->comments->count > 3):
-								$comments = array_slice($media->comments->data, 2); 
+								$comments = array_slice($media->comments->data, 3); 
 							else :
 								$comments = $media->comments->data;
 							endif;
@@ -64,6 +65,7 @@
 							</div>
 						<?php endforeach ?>
 						<?php endif ?>
+
 					</div>
 				<?php endforeach ?>
 			<?php endif ?>
