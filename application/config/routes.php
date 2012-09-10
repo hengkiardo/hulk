@@ -41,6 +41,26 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
+$route['widgets'] = "widgets";
+
+$route['in'] = "in";
+$route['in/(:any)'] = "in/$1";
+
+$route['sl'] = "sl";
+$route['sl/(:any)'] = "sl/$1";
+
+$route['widgets/(:any)'] = 'widgets/$1';
+
+$route['user'] = "user";
+$route['user/(:any)'] = "user/$1";
+
+$route['authorize'] = "authorize";
+
+$route['home'] = "home";
+$route['home/(:any)'] = "home/$1";
+
+$route['(.*)'] = "profile";
+$route['(.*)/(:any)'] = "profile/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

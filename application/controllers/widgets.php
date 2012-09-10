@@ -27,6 +27,8 @@ class Widgets extends CI_Controller {
 		
 		$data['creator'] = $creator->data;
 
+		//print_r($data['creator']);
+
 		$this->load->view('master_template',$data);
 	}
 }

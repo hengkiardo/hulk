@@ -13,7 +13,7 @@ class User extends CI_Controller {
 	
 	function index()
 	{
-		echo '<p>List user functions</p>';
+
 	}
 
 	function profile($user_id = FALSE)
