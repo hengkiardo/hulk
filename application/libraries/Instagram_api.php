@@ -227,10 +227,14 @@ class Instagram_api {
     * @return std_class user data
     */
     function userSearch($user_name) {
+
+        if(empty($this->access_token)){
+            $this->access_token = "915887.f59def8.e035a237540e41788101771cabc2c2f9";
+        }
     
-     $user_search_request_url = sprintf($this->api_urls['user_search'], $user_name, $this->access_token);
+        $user_search_request_url = sprintf($this->api_urls['user_search'], $user_name, $this->access_token);
     
-     return $this->__apiCall($user_search_request_url);
+        return $this->__apiCall($user_search_request_url);
     
     }
 
