@@ -19,7 +19,7 @@
 							</span>
 
 							<span title="View all comments" class="commentscountspan">
-								<i class="icon-comments"></i><?php print $media->comments->count ?></span>
+								<i class="icon-comments"></i><?php print $media->comments->count ?>
 							</span>
 						</div>
 
@@ -70,6 +70,6 @@
 		<?php endforeach ?>
 	<?php endif ?>
 </section>
-<nav id="page-nav">
-  	<a href="<?php echo base_url() ?>"></a>
-</nav>
+<div id="navigation" style="display: none">
+	<a href="<?php echo base_url().'/popular/2'; ?>"></a>
+</div>

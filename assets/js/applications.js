@@ -24,12 +24,14 @@ $(document).ready(function () {
             easing: 'linear',
             queue: false
         }
+      });
     });
-      
+
     $container.infinitescroll({
-          navSelector  : '#page-nav',    // selector for the paged navigation 
-          nextSelector : '#page-nav a',  // selector for the NEXT link (to page 2)
-          itemSelector : '.item-media',     // selector for all items you'll retrieve
+          navSelector  : '#navigation',    // selector for the paged navigation 
+          nextSelector : '#navigation a:first',  // selector for the NEXT link (to page 2)
+          itemSelector : '#content-mansory .item-media',     // selector for all items you'll retrieve
+          debug: true,
           loading: {
               finishedMsg: 'No more pages to load.',
               img: 'http://i.imgur.com/6RMhx.gif'
@@ -46,8 +48,6 @@ $(document).ready(function () {
 
               $container.masonry( 'appended', $newElems, true ); 
             });
-          }
-        );
     });
 
     /*
